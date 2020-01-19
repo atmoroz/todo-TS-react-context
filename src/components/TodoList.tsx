@@ -3,18 +3,18 @@ import { myContext } from "../contextReact";
 import { ITodosInterface } from "../interfaces";
 
 const TodoList: React.FC = () => {
-  const { store }: any = useContext(myContext);
+  const { todos, throughHandler, removeTodo }: any = useContext(myContext);
   const toogleCompleated = (id: number) => {
-    store.throughHandler(id);
+    throughHandler(id);
   };
   const removeHandler = (event: React.MouseEvent, id: number) => {
     event.preventDefault();
-    store.removeTodo(id);
+    removeTodo(id);
   };
   return (
     <div className="todoList">
       <ul>
-        {store.todos.map((todo: ITodosInterface) => {
+        {todos.map((todo: ITodosInterface) => {
           const classes = ["todo"];
           if (todo.isCompleated) {
             classes.push("compleated");
