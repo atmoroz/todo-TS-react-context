@@ -45,3 +45,9 @@ code {
   cursor: pointer;
   z-index: 2;
 }
+.aboutText {
+  margin-bottom: 20px;
+}
+.center {
+  margin: 20px auto;
+}

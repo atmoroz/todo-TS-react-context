@@ -4,13 +4,16 @@ import { ITodosInterface } from "../interfaces";
 
 const TodoList: React.FC = () => {
   const { todos, throughHandler, removeTodo }: any = useContext(myContext);
+
   const toogleCompleated = (id: number) => {
     throughHandler(id);
   };
+
   const removeHandler = (event: React.MouseEvent, id: number) => {
     event.preventDefault();
     removeTodo(id);
   };
+
   return (
     <div className="todoList">
       <ul>
